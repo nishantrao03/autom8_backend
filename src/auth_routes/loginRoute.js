@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
       secure: false, // true in production, false in development
       sameSite: 'Strict', // 'None' in production, 'Strict' in development    
       // maxAge: 900 * 1000, // 1 hour
-      maxAge: 20 * 1000, // 10 seconds for testing
+      maxAge: 10 * 60* 1000, // 10 minutes
     });
     
     // res.cookie('refresh_token', refreshToken, {
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
       secure: false, // secure in production
       sameSite: 'Strict', // 'None' in production, 'Strict' in development   
       // maxAge: 7 * 24 * 3600 * 1000, // 7 days
-      maxAge: 30 * 1000, // 1 minute for testing
+      maxAge: 7 * 24 * 3600 * 1000, // 1 minute for testing
     });
 
     // Step 4: Send success response
