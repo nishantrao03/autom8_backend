@@ -5,6 +5,8 @@ const { connectDB } = require('./db/mongo');
 require('dotenv').config();
 
 const index = require('./routes/index'); // your other routes
+const createUser = require('./routes/createUser'); // your create user route
+
 const loginRoute = require('./auth_routes/loginRoute'); // your login route
  const logoutRoute = require('./auth_routes/logoutRoute'); // logout route
 const refreshTokenRoute = require('./auth_routes/refreshTokenRoute'); // refresh token route
@@ -44,6 +46,8 @@ app.use(cors({
 
 // Mount your routes
 app.use(index);
+app.use(createUser); // create user route
+
 app.use(loginRoute);       // ✅ login route
  app.use(logoutRoute);      // logout route
 app.use(refreshTokenRoute);// refresh token route
